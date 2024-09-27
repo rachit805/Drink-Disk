@@ -1,9 +1,13 @@
 import 'package:drinkdash/constants/theme_data.dart';
+import 'package:drinkdash/controller/cart_controller.dart';
 import 'package:drinkdash/controller/homepage_controller.dart';
 import 'package:drinkdash/ui/bottomNav/categories_screen.dart';
 import 'package:drinkdash/ui/bottomNav/home_screen.dart';
+import 'package:drinkdash/ui/bottomNav/item_list_screen/demo.dart';
+import 'package:drinkdash/ui/bottomNav/item_list_screen/new_arrival_list_screen.dart';
 import 'package:drinkdash/ui/bottomNav/order_screen.dart';
 import 'package:drinkdash/ui/bottomNav/search_screen.dart';
+import 'package:drinkdash/ui/ordering/product_review_screen.dart';
 import 'package:drinkdash/widgets/c_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -35,8 +39,9 @@ class HomePage extends StatelessWidget {
   final List<Widget> _screens = [
     const HomeScreen(),
     const CategoriesScreen(),
-    const SearchScreen(),
-    const OrderScreen()
+    // const CategoriesScreen(),
+     const SearchScreen(),
+    SwipeableCards()
   ];
 
   @override
