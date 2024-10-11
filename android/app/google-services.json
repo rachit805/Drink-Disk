@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "613494267082",
+    "project_id": "drinkdesk-41cbe",
+    "storage_bucket": "drinkdesk-41cbe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:613494267082:android:4537d38ac91ad8876ca833",
+        "android_client_info": {
+          "package_name": "com.example.drinkdash"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBehcyGb2Igya4pDdOrAH-DUFF6GTkJ3V0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

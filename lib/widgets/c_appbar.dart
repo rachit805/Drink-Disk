@@ -1,7 +1,8 @@
 import 'package:drinkdash/constants/theme_data.dart';
 import 'package:drinkdash/controller/cart_controller.dart';
-import 'package:drinkdash/ui/ordering/product_review_screen.dart';
-import 'package:drinkdash/widgets/c_icon.dart';
+import 'package:drinkdash/ui/ordering/emptcart_screen.dart';
+import 'package:drinkdash/ui/ordering/cart_screen.dart';
+// import 'package:drinkdash/widgets/c_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -18,7 +19,7 @@ class CustomAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 80.0, // Set the height of the AppBar
+      height: 60.0, // Set the height of the AppBar
       color: AppTheme.primaryColor, // AppBar background color
       padding:
           const EdgeInsets.symmetric(horizontal: 16.0), // Padding for the icons
@@ -60,7 +61,7 @@ class CustomAppBar extends StatelessWidget {
             "Drink Dash",
             style: Theme.of(context)
                 .textTheme
-                .displayLarge
+                .labelLarge
                 ?.copyWith(color: Colors.white),
           ),
           // Right side - Two icons
@@ -70,7 +71,14 @@ class CustomAppBar extends StatelessWidget {
               const SizedBox(width: 16), // Spacing between icons
               InkWell(
                 onTap: () {
-                  Get.to(() => ItemReviewScreen());
+                  // Check if cart is empty or not
+                  if (cartController.quantity.value > 0) {
+                    // Navigate to CartScreen if items are in the cart
+                    Get.to(() => CartScreen());
+                  } else {
+                    // Navigate to EmptyCartScreen if the cart is empty
+                    Get.to(() => const EmptyCartScreen());
+                  }
                 },
                 child: Stack(
                   alignment: Alignment.center,
@@ -132,7 +140,7 @@ class CIcon extends StatelessWidget {
       onTap: onTap,
       child: Icon(
         icon,
-        size: 35, // Icon size
+        size: 30, // Icon size
         color: AppTheme.secondaryColor, // Icon color
       ),
     );
